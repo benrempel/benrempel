@@ -4,7 +4,7 @@
   <body>
     <div class="layout">
       {% include header.html %}
-      <main class="content">{{ content }}</main>
+      <main class="content {{ page.class }}">{{ content }}</main>
     </div>
     {% include footer.html %}
   </body>

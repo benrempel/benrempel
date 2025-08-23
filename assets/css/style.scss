@@ -1,144 +1,196 @@
 ---
 ---
 
-body {
-  font-family: system-ui, sans-serif;
-  margin: 0;
-  background: #fff;
-  color: #222;
+// ========== Global variables ==========
+:root {
+  --nav-h: 56px;          // Adjust to your actual nav height
+  --accent: #6a5acd;      // Accent color (tweak to taste)
+  --content-max: 700px;   // Main content max width
+  --background-color: #fcfcfc;
 }
 
-.layout {
-  display: flex;
-  min-height: 100vh;
+/* Box sizing + smooth rendering */
+*, *::before, *::after { box-sizing: border-box; }
+html { -webkit-font-smoothing: antialiased; -moz-osx-font-smoothing: grayscale; }
 
-  @media (max-width: 768px) {
-    flex-direction: column;
-  }
-}
-
-
-/* FONTS */
-
+// ========== Base ==========
 body {
-  font-family: 'Crimson Pro', serif;
-  //font-family: 'Work Sans', sans-serif;
+  /* If you picked Work Sans, keep as-is; if Crimson Pro, change the first family to 'Crimson Pro' */
+  font-family: 'Crimson Pro', system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
   font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: 0.2px;
+  margin: 0;
+  color: #222;
+  background: var(--background-color); //sliiiightly lavender
+
+  /* Offset for fixed nav so content isn't hidden */
+  padding-top: var(--nav-h);
+}
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-underline-offset: 2px;
+}
+a:hover { color: var(--accent); }
+
+img, video {
+  max-width: 100%;
+  height: auto;
+  display: block;
+}
+
+iframe {
+  display: block;
+  margin: 1.5rem 0;
+}
+
+// ========== Typography spacing ==========
+h1, h2, h3 {
+  line-height: 1.25;
+  margin: 2.25rem 0 0.75rem;
+}
+p { margin: 0 0 1.2rem; }
+ul, ol { margin: 0 0 1.2rem 1.25rem; }
+
+// Optional accent on section headers
+h2 {
+  padding-left: 0.5rem;
+  border-left: 4px solid var(--accent);
+}
+
+// ========== Layout containers ==========
+/* Use either <main> or a .content wrapper on pages */
+main, .content {
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 4rem 1rem;
+  //background: transparent;
+}
+
+
+// ========== Fixed top navigation ==========
+.topnav {
+  position: fixed;
+  top: 0; left: 0; right: 0;
+  z-index: 1000;
+  background: var(--background-color);
+  border-bottom: 1px solid #ddd;
+  //backdrop-filter: saturate(120%) blur(4px); /* subtle polish; remove if you prefer */
+}
+
+.topnav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--content-max);
+  margin: 0 auto;
+  padding: 0.75rem 1rem;
+  gap: 1rem;
+}
+
+.site-title {
+  margin: 0;
+  font-size: 1.1rem;
+  font-weight: 600;
+}
+.site-title a { text-decoration: none; }
+
+.topnav nav ul {
+  display: flex;
+  list-style: none;
+  gap: 1rem;
+  margin: 0;
+  padding: 0;
+}
+
+.topnav a {
+  text-decoration: none;
+  color: #333;
+  padding-bottom: 2px; /* space for active underline */
+}
+
+/* Active page highlight (Liquid adds .active) */
+.topnav a.active {
+  font-weight: 600;
+  border-bottom: 2px solid currentColor;
+}
+
+/* Mobile wrapping */
+@media (max-width: 640px) {
+  .topnav-inner { flex-wrap: wrap; }
+  .topnav nav ul { flex-wrap: wrap; gap: 0.75rem 1rem; }
+}
+
+
+// ========== Home page =============
+
+.home-page {
+  //text-align: center;
+}
+
+.home-page img,
+.home-page iframe {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.intro-text {
+  max-width: 450px;     /* narrower width than main content */
+  margin: 0 auto;    /* centers the box horizontally */
+  text-align: left;     /* keeps text left-aligned inside */
+  //font-size: 1.1rem;    /* optional: make it stand out */
   line-height: 1.6;
 }
 
-h1, h2, h3 {
-  font-weight: 600;
-}
-
-
-/* SIDEBAR */
-
-.sidebar {
-  width: 200px;
-  background-color: #fcfcfc;
-  padding: 1rem;
-  //border-right: 1px solid #000;
-   text-align: right;
-
-  @media (max-width: 768px) {
-    width: 100%;
-    border-right: none;
-    border-bottom: 1px solid #ddd;
-	text-align: left;
-  }
-}
-
-.sidebar h1 {
-  font-size: 1.2rem;
-  margin-bottom: 1rem;
-  
-  @media (max-width: 768px){
-	  display: inline-block;
-	  margin-right: 1rem;
-  }
-}
-
-.sidebar nav ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
-  display: flex;
-  flex-direction: column;
-
-  @media (max-width: 768px) {
-    flex-direction: row;
-	align-items: center;
-    flex-wrap: wrap;
-  }
-}
-
-.sidebar nav li {
-  margin-bottom: 0.5rem;
-
-  @media (max-width: 768px) {
-    margin: 0 1rem 0 0;
-  }
-}
-
-.sidebar nav a {
-  text-decoration: none;
-  color: #333;
-}
-
-
-
-/* GENERAL */
-
-.content {
-  flex: 1;
-  //margin: 0 auto;
-  padding: 2rem;
-  max-width: 700px;
-}
-
-body {
-  background: #fcfcfc;
-}
-
-.content img {
-  max-width: 100%;   /* Prevents image from overflowing container */
-  height: auto;      /* Keeps aspect ratio */
-  max-height: 400px; /* Limits image height */
-  display: block;
-  margin: 1rem 0;
-}
-
-img, iframe, .embed {
-  display: block;
-  max-width: 100%;
-  //margin: 0 auto;
-  margin: 2rem 0;
-}
-
-
-
-/* INDEX PAGE */
-
+// ========== Home: bio section ==========
 .bio-container {
   display: flex;
   align-items: center;
-  gap: 1.5rem;  /* space between photo and bio */
+  gap: 1.5rem;
   margin: 2rem 0;
-  
-  @media (max-width: 600px) {
-      flex-direction: column;
-      align-items: flex-start;
-    }
 }
-
 .bio-photo {
-  max-width: 200px;  /* adjust size */
+  max-width: 300px;
   height: auto;
-  // border-radius: 8px; /* optional: rounded corners */
-  flex-shrink: 0;     /* prevents shrinking */
+  //border-radius: 8px;
+  flex-shrink: 0;
+}
+.bio-text { flex: 1; }
+
+@media (max-width: 600px) {
+  .bio-container {
+    flex-direction: column;
+    align-items: flex-start;
+  }
 }
 
-.bio-text {
-  flex: 1;  /* take remaining space */
+
+
+
+/*
+
+// ========== Events page tweaks (optional) ==========
+.events-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
 }
+.events-list li {
+  padding: 0.5rem 0;
+  border-bottom: 1px dashed #e5e5e5;
+}
+.events-list a { text-decoration: underline; }
+
+// ========== Footer ==========
+footer {
+  max-width: var(--content-max);
+  margin: 4rem auto 1rem;
+  padding: 2rem 1rem 0;
+  text-align: center;
+  font-size: 0.9rem;
+  color: #777;
+  border-top: 1px solid #eee;
+}
+*/

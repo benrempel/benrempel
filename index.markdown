@@ -1,10 +1,12 @@
 ---
 layout: default
 title: Home
+class: home-page
 ---
 
-percussionist, improviser, composer, and dance accompanist <br>
-in Los Angeles / Tovangaar
+<div class="intro-text">
+percussionist, improviser, and composer in Los Angeles/Tovangaar
+</div>
 
 <iframe style="border: 0; width: 560px; height: 290px;" src="https://bandcamp.com/EmbeddedPlayer/album=2108160852/size=large/bgcol=ffffff/linkcol=333333/artwork=small/transparent=true/" seamless><a href="https://searchingrecords.bandcamp.com/album/live-in-prospect-park">Live in Prospect Park by Ben Rempel &amp; Justin Gunter</a></iframe>
 

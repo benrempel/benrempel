@@ -5,7 +5,7 @@ class: home-page
 ---
 
 <div class="intro-text">
-percussionist, improviser, and composer in Los Angeles/Tovangaar
+percussionist, improviser, and composer in Los Angeles / Tovangaar.
 </div>
 
 <iframe style="border: 0; width: 560px; height: 290px;" src="https://bandcamp.com/EmbeddedPlayer/album=2108160852/size=large/bgcol=ffffff/linkcol=333333/artwork=small/transparent=true/" seamless><a href="https://searchingrecords.bandcamp.com/album/live-in-prospect-park">Live in Prospect Park by Ben Rempel &amp; Justin Gunter</a></iframe>
@@ -18,10 +18,16 @@ percussionist, improviser, and composer in Los Angeles/Tovangaar
 <div class="bio-container">
   <img src="/assets/img/ben5.jpg" alt="Ben sitting at the drums" class="bio-photo" />
   <div class="bio-text">
-    <p>LA-based percussionist, improviser, and composer whose practice spans experimental music, improvised music, western classical music, jazz, Brazilian music, songwriting, and more.</p>
+    <p>Ben Rempel is a Los Angeles based percussionist, improviser, and composer whose practice spans experimental music, improvised music, western classical music, jazz, Brazilian music, songwriting, and more.</p>
 		
-	<p>Ben has a master’s degree in music from UC San Diego where he studied with Steven Schick and bachelor’s degrees in percussion performance and computer science from Oberlin College where he studied with Michael Rosen and Jamey Haddad.</p>
+	<p>He has a master’s degree in music from UC San Diego, where he studied with Steven Schick, and bachelor’s degrees in percussion performance and computer science from Oberlin College, where he studied with Michael Rosen and Jamey Haddad.</p>
 		
-	<p>He regularly collaborates with dancers, having worked as a dance accompanist at CSU Fullerton, USC Kaufman, UCI, CSU Long Beach, and San Diego State, in addition to performing and composing in several dance productions.</p>
+	<p>Ben currently works as a dance accompanist for modern and ballet 
+		classes at CSU Fullerton. Past accompanist work includes 
+		Viver Brasil Dance Company, the University of Southern California, 
+		UC Irvine, CSU Long Beach, The Wooden Floor, San Diego State
+		University, and Oberlin College. He has composed for and performed
+		in dance concerts at CSUF, UC San Diego, and Oberlin College.
+		</p>
   </div>
 </div>

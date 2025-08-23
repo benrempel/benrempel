@@ -1,9 +1,10 @@
 ---
 layout: default
 title: Events
+class: narrow-page
 ---
 
-## Upcoming Events
+## upcoming events
 
 <ul>
   {% for event in site.data.events.upcoming %}
@@ -19,7 +20,7 @@ title: Events
   {% endfor %}
 </ul>
 
-## Past Events
+## past events
 
 <ul>
   {% for event in site.data.events.past %}

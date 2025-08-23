@@ -18,25 +18,45 @@ body {
 }
 
 
+/* FONTS */
+
+body {
+  font-family: 'Crimson Pro', serif;
+  //font-family: 'Work Sans', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+}
+
+h1, h2, h3 {
+  font-weight: 600;
+}
+
 
 /* SIDEBAR */
 
 .sidebar {
   width: 200px;
-  background-color: #f5f5f5;
+  background-color: #fcfcfc;
   padding: 1rem;
-  border-right: 1px solid #ddd;
+  //border-right: 1px solid #000;
+   text-align: right;
 
   @media (max-width: 768px) {
     width: 100%;
     border-right: none;
     border-bottom: 1px solid #ddd;
+	text-align: left;
   }
 }
 
 .sidebar h1 {
   font-size: 1.2rem;
   margin-bottom: 1rem;
+  
+  @media (max-width: 768px){
+	  display: inline-block;
+	  margin-right: 1rem;
+  }
 }
 
 .sidebar nav ul {
@@ -48,6 +68,7 @@ body {
 
   @media (max-width: 768px) {
     flex-direction: row;
+	align-items: center;
     flex-wrap: wrap;
   }
 }
@@ -71,8 +92,13 @@ body {
 
 .content {
   flex: 1;
+  //margin: 0 auto;
   padding: 2rem;
-  max-width: 800px;
+  max-width: 700px;
+}
+
+body {
+  background: #fcfcfc;
 }
 
 .content img {
@@ -81,6 +107,13 @@ body {
   max-height: 400px; /* Limits image height */
   display: block;
   margin: 1rem 0;
+}
+
+img, iframe, .embed {
+  display: block;
+  max-width: 100%;
+  //margin: 0 auto;
+  margin: 2rem 0;
 }
 
 
@@ -100,7 +133,7 @@ body {
 }
 
 .bio-photo {
-  max-width: 150px;  /* adjust size */
+  max-width: 200px;  /* adjust size */
   height: auto;
   // border-radius: 8px; /* optional: rounded corners */
   flex-shrink: 0;     /* prevents shrinking */

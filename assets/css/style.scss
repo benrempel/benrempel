@@ -13,14 +13,21 @@
 // ========== Global variables ==========
 :root {
   --nav-h: 70px;          // Adjust to your actual nav height
-  //--accent: #1DA149;      // Accent color (tweak to taste)
-  --content-max: 700px;   // Main content max width
-  --narrow-page-max: 580px;
-  --nav-max: 580px;
-  --background-color: #fcfefd;
+	--nav-max: 620px;
+  --content-max: 750px;   // Main content max width
+  --narrow-page-max: 620px;
+  --background-color: #fcfcfc;
   --text-color: #222;
+	--text-color-light: #777;
   --text-active-color: #12632D;
-  --line-color: #222;
+  //--line-color: #222;
+}
+
+//you'll need to update the media max-width if nav bar text changes horizontal size
+@media (max-width: 321.5px) {
+  :root {
+    --nav-h: 110px;   /* or whatever height your nav becomes when stacked */
+  }
 }
 
 /* Box sizing + smooth rendering */
@@ -55,10 +62,58 @@ img, video {
   display: block;
 }
 
+/* //no longer relevant
 iframe {
   display: block;
-  margin: 1.5rem 0;
+  margin: 3rem 0;
+} */
+
+/* cap width + center */
+.max-560 { max-width: 560px; margin: 0 auto; }
+
+/* responsive 16:9 box */
+.yt-16x9 {
+  width: 100%;
+  aspect-ratio: 16 / 9;
+	margin: 2rem auto; 
 }
+
+.yt-16x9 iframe {
+  width: 100%;
+  height: 100%;
+  border: 0;
+  display: block;
+}
+
+.bandcamp-embed {
+  width: 100%;          /* responsive width */
+  max-width: 560px;     /* or whatever feels right */
+  height: 290px;        /* fixed height from Bandcamp embed code */
+  border: 0;
+  display: block;
+  margin: 2rem auto;    /* center and add spacing */
+}
+
+/*
+
+// responsive 16:9 wrapper
+.embed-16x9 {
+  position: relative;
+  width: 100%;
+  padding-top: 56.25%;   // 16:9
+  overflow: hidden;
+}
+.embed-16x9 iframe {
+  position: absolute;
+	top: 0; left: 0;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+
+//cap the max width and center it
+.max-560 { max-width: 560px; margin: 0 auto; }*/
 
 // ========== Typography spacing ==========
 h1, h2, h3 {
@@ -74,8 +129,8 @@ h2 {
 }
 
 h3 { 
-	font-size: 1.25rem; 
-	font-weight: 500;
+	font-size: 1rem; 
+	font-weight: 600;
 }
 
 p { margin: 0 0 1.2rem; }
@@ -92,7 +147,7 @@ h2 {
 main, .content {
   max-width: var(--content-max);
   margin: 0 auto;
-  padding: 1rem 10px;
+  padding: 1rem 30px;
   //background: transparent;
 }
 
@@ -120,10 +175,10 @@ main > :first-child {
   align-items: flex-end;
   justify-content: space-between;
   max-width: var(--nav-max);
-  margin: 10px auto;
-  padding: 0.5rem 10px;
+  margin: 0px auto;
+  padding: 0.5rem 30px;
   gap: 1rem;
-  border-bottom: 1px solid var(--line-color);
+  border-bottom: 1px solid var(--text-color);
 }
 
 .site-title {
@@ -144,9 +199,6 @@ main > :first-child {
 
 .topnav a {
   text-decoration: none;
-
-  //color: #333;
-  //padding-bottom: 2px; /* space for active underline */
 }
 
 .topnav nav a {
@@ -167,8 +219,8 @@ main > :first-child {
   
   
   //padding: 0.1rem 0.9rem;
-  //border: 1px solid var(--line-color);
-  //background: var(--line-color);
+  //border: 1px solid var(--text-color);
+  //background: var(--text-color);
 }
 
 /* Mobile wrapping */
@@ -195,13 +247,14 @@ main > :first-child {
   margin: 0 auto;    /* centers the box horizontally */
   text-align: left;     /* keeps text left-aligned inside */
   //font-size: 1.1rem;    /* optional: make it stand out */
-  line-height: 1.6;
+  //line-height: 1.6;
 }
 
 // ========== Home: bio section ==========
 .bio-container {
   display: flex;
-  align-items: center;
+  //align-items:center;
+  align-items: flex-start;
   gap: 1.5rem;
   margin: 2rem 0;
 }
@@ -230,7 +283,7 @@ main > :first-child {
 .signup-form input[type="email"] {
   width: 75%;
   padding: 0.1rem 0.7rem;
-  border: 1px solid var(--line-color);
+  border: 1px solid var(--text-color);
   //border-radius: 6px;
   margin-bottom: 0.25rem;
   font: inherit;
@@ -259,7 +312,7 @@ main > :first-child {
 }
 
 
-/*
+
 
 // ========== Events page tweaks (optional) ==========
 .events-list {
@@ -268,10 +321,87 @@ main > :first-child {
   margin: 0;
 }
 .events-list li {
-  padding: 0.5rem 0;
-  border-bottom: 1px dashed #e5e5e5;
+  display: flex;
+  margin-bottom: 0.5rem;
 }
 .events-list a { text-decoration: underline; }
+
+// Prevent chunks from breaking mid-word
+.event-chunk { white-space: nowrap; }
+
+.event-date {
+  flex: 0 0 10ch;   // reserve space for date (10 characters = YYYY-MM-DD)
+  font-weight: 600;
+}
+
+.event-details {
+  flex: 1;         /* take remaining width */
+  display: block;  /* normal inline text flow */
+}
+
+.event-details .event-chunk {
+  display: inline;
+  margin-right: 0.4rem;  /* spacing between chunks */
+}
+
+/* Titles wrap normally */
+.event-title {
+  white-space: normal;
+  word-break: break-word;
+}
+
+/* Info and location: smaller font, can wrap if long */
+.event-info {
+  font-size: 0.9rem;
+  //font-style: italic;
+  //color: #666;
+}
+
+.event-location {
+  font-size: 0.9rem;
+  color: var(--text-color-light);
+}
+
+/* old version, approximately same result
+.event-details {
+  //display: inline-flex;
+  //flex-wrap: wrap;
+  align-items: baseline;
+}
+
+.event-title {
+  white-space: normal;       //allow wrapping
+  word-break: break-word;    // ensures long words won’t overflow
+}
+
+.event-info {
+	font-size: 0.9rem;
+}
+
+.event-location {
+	font-size: 0.9rem;
+}
+*/
+
+.event-media-link {
+  //padding: 0.1rem 0.9rem;
+  border: 2px solid #ddd;
+  //border-radius: 6px;
+  background: #ddd;
+	font-weight: 600;
+	//font-style: bold;
+  //color: var(--background-color);
+}
+
+.event-media-link:hover {
+  //background: var(--accent);
+  //color: #fff;
+  //transition: background 140ms ease, color 140ms ease, border-color 140ms ease;
+}
+
+
+
+/*
 
 // ========== Footer ==========
 footer {

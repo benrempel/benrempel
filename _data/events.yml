@@ -1,15 +1,18 @@
-upcoming:
-  - date: 2025-09-21
-    title: Open Gate Series - Trio with Nev Wendell and Mason Moy
-    location: Los Angeles, CA
-    url: https://www.instagram.com/opengateconcertseries/
-  - date: 2025-10-22
-    title: Ben Rempel Trio with Marta Tiesenga and Patrick Shiroisi plus Mingjia Chen at Solarc Brewing
-    location: Los Angeles, CA
-    url: https://www.instagram.com/solarcbrewing/
-
-past:
-  - date: 2025-07-22
-    title: Ben Rempel Band at Scribble
-    location: Los Angeles, CA
-    url: https://www.instagram.com/ben.remp/
+- date: 2025-09-21
+  title: Open Gate Series - Trio with Nev Wendell and Mason Moy
+  info: 7pm at Scribble
+  location: Los Angeles, CA
+  url: https://www.instagram.com/opengateconcertseries/
+  
+- date: 2025-10-22
+  title: Ben Rempel Trio with Marta Tiesenga and Patrick Shiroisi, plus mingjia chen
+  info: 7:30pm at Solarc Brewing
+  location: Los Angeles, CA
+  url: https://www.instagram.com/solarcbrewing/
+  
+- date: 2025-07-22
+  title: Ben Rempel Band at Scribble
+  location: Los Angeles, CA
+  url: https://www.instagram.com/ben.remp/p/DM8B01GRELm/
+  media-text: video
+  media-link: https://www.scribblecommunity.com/event/ben-rempel-linnea-sablosky

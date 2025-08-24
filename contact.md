@@ -9,7 +9,7 @@ class: narrow-page
 benrempelmusic@gmail.com  
 instagram: [@ben.remp](https://instagram.com/ben.remp)
 
-if you'd like to sign up for my mailing list, enter your email:
+### email list sign-up:
 
 <form id="signup-form" action="https://formspree.io/f/mpwlvvez" method="POST" class="signup-form" onsubmit="return false;">
   <input type="email" name="email" placeholder="you@example.com" required>

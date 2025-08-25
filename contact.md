@@ -7,7 +7,7 @@ class: narrow-page
 ## contact
 
 benrempelmusic@gmail.com  
-instagram: [@ben.remp](https://instagram.com/ben.remp)
+instagram: <a href="https://instagram.com/ben.remp" target="_blank" rel="noopener">@ben.remp</a>
 
 ### email list sign-up:
 

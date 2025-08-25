@@ -5,7 +5,7 @@ class: home-page
 ---
 
 <div class="intro-text">
-percussionist, improviser, and composer in Los Angeles / Tovangaar
+percussionist, improviser, and composer in Los Angeles / Tovaangar
 </div>
 
 <!-- style="border: 0; width: 100%; max-width: 560px; height: 290px;"-->
